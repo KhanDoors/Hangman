@@ -48,4 +48,3 @@ function drawHead () {
       $k = $k.next();
       }
   }
-  
