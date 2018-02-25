@@ -1,4 +1,3 @@
-
 function resetGame () {
     resetUI();
     gameAnswer = chooseWord();
@@ -6,10 +5,7 @@ function resetGame () {
     hangmanState = 0;
     drawWord(gameShownAnswer);    
 }
-function newFunction() {
-    $(document).ready(resetGame);
-}
-
+$(document).ready(resetGame);
 function win () { alert('You win!');  resetGame() ;}
 function lose () { alert('Oh no, you lose!'); resetGame(); }
 function doKeypress () {
@@ -33,4 +29,4 @@ function doKeypress () {
         }
     }  
 }
-
+$('#letter-input').keyup( doKeypress );
