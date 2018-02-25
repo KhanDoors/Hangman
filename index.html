@@ -4,14 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Hangman</title>
 
         <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="Assets\javascipt\game.js"></script>
+        <script src="Assets\javascript\game.js"></script>
 </head>
 <body>
+    <div class="container">
+            <header> 
+                <h1>NFL Hangman Game</h1>
+                <h3>NFC Beast</h3>
+            </header>
+    </div>
     
-</body>
-</html>
+    <div class='topmatter'> <!-- encloses topmatter -->
+        <div class='hang-container'>
+          <div class='scaffolding-top'></div>
+          <div class='scaffolding-left'></div>
+      
+          <div class='draw-area'>
+            <div class='rope'></div>
+          </div>
+      
+          <div class='scaffolding-base'></div>
+        </div>
+        <div class='side-container'>
+          <div class='container-title'>Guess A Letter!</div>
+          <div class='input-area'>
+            <input id='letter-input' type='text' maxlength='1'/>
+          </div>
+        </div>
+      
+        <div class='side-container'>
+          <div class='container-title'>Guessed Letters</div>
+          <div id="wrong-letters" class='input-area'></div>
+        </div>
+      </div>
+      <div class='bottommatter'>
+          <div class='word-box'>
+              <div class='word-display'>
+              </div>
+          </div>
+      </div>   
+  </body>
+  <script src='Assets\javascript\ui.js'></script>
+  <script src='Assets\javascript\rules.js'></script>
+  <script src='Assets\javascript\game.js'></script>
+  </html>
