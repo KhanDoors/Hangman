@@ -1,28 +1,33 @@
-// Teams in the nfc east.
 
-var words = ['cat', 'tree', 'swing', 'around', 'scientist'];
-
-function chooseWord () {
-    return words[Math.floor(Math.random() * words.length)];
+function resetGame () {
+    resetUI();
+    gameAnswer = chooseWord();
+    gameShownAnswer = blanksFromAnswer(gameAnswer);
+    hangmanState = 0;
+    drawWord(gameShownAnswer);    
 }
+$(document).ready(resetGame);
+function win () { alert('You win!');  resetGame() ;}
+function lose () { alert('Oh no, you lose!'); resetGame(); }
+function doKeypress () {
+    var tempChar = $('#letter-input').val().toLowerCase();
+    var tempString = "";
+    $('#letter-input').val("");
 
-function blanksFromAnswer ( answerWord ) {  
-    var result = ""; 
-    for ( i in answerWord ) {
-        result = "_" + result;
+    // Write here!
+    tempString = guessLetter( tempChar, gameShownAnswer, gameAnswer );
+    if ( tempString != gameShownAnswer ) {
+        updateWord( tempString );
+        gameShownAnswer = tempString;
+        if ( gameShownAnswer === gameAnswer ) {
+            win();
+}
+    } else {
+        wrongLetter(tempChar);
+        drawSequence[ hangmanState++ ]();
+        if ( hangmanState === drawSequence.length ) {
+            lose();
+}
     }
-    return result;
 }
-function alterAt ( n, c, originalString ) {
-    return originalString.substr(0,n) + c + originalString.substr(n+1,originalString.length);
-}
-function guessLetter( letter, shown, answer ) {
-    var checkIndex = 0;
-    
-    checkIndex = answer.indexOf(letter);
-    while ( checkIndex >= 0 ) {
-        shown = alterAt( checkIndex, letter, shown );
-        checkIndex = answer.indexOf(letter, checkIndex + 1);
-    }
-    return shown;
-}
+$('#letter-input').keyup( doKeypress );

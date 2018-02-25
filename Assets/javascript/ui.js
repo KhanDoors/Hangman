@@ -1,3 +1,4 @@
+
 function drawHead () {
     $('.draw-area').append( $('<div/>').addClass("body-part head") );
   }
