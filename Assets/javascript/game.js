@@ -31,7 +31,7 @@ var rightGuessDashes = [];
 function getWord() { 
     chosenWord = words[Math.floor(Math.random() * words.length)];
     document.getElementById("Words").innerHTML = chosenWord;
-};
+  };
 //execute above function
 getWord();
 //create dashes for amount of letters
@@ -41,8 +41,8 @@ for (var i=0; i<word.length;i++)
 {
     answer[i]="_";
       }
-
   document.getElementById("spaces").innerHTML = answer;
+  
 //get user input
 var guess = prompt("Guess a letter, or click Cancel to stop playing.");
 
@@ -64,6 +64,7 @@ for (var j = 0; j < word.length; j++) {
 
    remainingLetters--;
 
+   document.getElementById("spaces").innerHTML = answer;
    }
 
  }
@@ -84,28 +85,12 @@ while(remainingGuess>0){
       if(word[j]==guess){
         answer[j]=guess;
         remainingGuess--;
+        
       }
     }
   }
 }
 alert(answer.join(" "));
-alert("You Won!"+ teamlist);
-
-//compare user input to the word
-function Search() {
-    if (guess == answerArray) {
-        document.writeln("Yes!");
-    } else {
-        alert("Uh-Oh");
-    }
-}
-
-
-//win or lose
-
-//
-//alert(answerArray.join(" "));
-
-//alert("Good job! The answer was " + word);
+alert("You Won! The Word was "+ word);
 
 }

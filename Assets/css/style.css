@@ -138,16 +138,9 @@ text-decoration: none;
         padding: 30px;
         width: 100%;
         max-width: 1000px;
-        float: right;
+        float: left;
         border: 1px solid #ddd;
         margin-bottom: 200px;
-    }
-
-    h3, .sidebar, h2 {
-        border-bottom: 2px solid #eee;
-        padding-bottom: 20px;
-        margin-bottom: 15px;
-        line-height: 300px;
     }
 
     /*footer*/
