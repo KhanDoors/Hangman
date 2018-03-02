@@ -8,6 +8,8 @@ font-size: 18px;
 Line-height: 34px;
 font-family: 'Ariel', 'helvetica Neue', Helvetica, sans-serif; 
 color: #777;
+height:100%;
+text-align:center;
 }
 
 .container {
@@ -17,9 +19,6 @@ margin: 0 auto;
 clear: both;
 }
 
-p:last-child {
-    margin-bottom: 0;
-    }
 
     h1, h2, h3 {
         font-family: 'Georgia', Times, Times New Roman, serif;
@@ -51,18 +50,25 @@ width: 100%;
 
 #logo {
 width: 250px;
-height: 90px;
+height: 110px;
 background: #4aaaa5;
 float: left;
 font-family: 'Georgia', Times, Times New Roman, serif;
 text-align: center;
-line-height: 90px;
+line-height: 80px;
 color: #fff;
 font-weight: 700;
-font-size: 30px;
+font-size: 25px;
 text-decoration: none;
 }
 
+.auth-image {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    float: right;
+    margin-right: 25px;
+}
     /*main*/
     #main-container {
         padding-top: 130px;
@@ -78,12 +84,60 @@ text-decoration: none;
         border: 1px solid #ddd;
     }
 
-    .auth-image {
+    #buttons {
         width: 100px;
         height: 100px;
-        margin-top: 10px;
-        float: right;
-        margin-right: 25px;
+        background: #fff;
+        float: left;
+        border: 1px solid #ddd;
+    }
+
+    #Words {
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        float: left;
+        border: 1px solid #ddd;
+    }
+
+    #spaces {
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        float: left;
+        border: 1px solid #ddd;
+    }
+
+    #wins {
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        float: left;
+        border: 1px solid #ddd;
+    }
+
+    #loses {
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        float: left;
+        border: 1px solid #ddd;
+    }
+
+    #wrong guess {
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        float: left;
+        border: 1px solid #ddd;
+    }
+    
+    #guesses left {
+        width: 100px;
+        height: 100px;
+        background: #fff;
+        float: left;
+        border: 1px solid #ddd;
     }
 
     /*sidebar*/
