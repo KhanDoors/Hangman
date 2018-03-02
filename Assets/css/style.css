@@ -79,15 +79,7 @@ text-decoration: none;
         padding: 30px;
         margin: 0 0 40px 0;
         width: 100%;
-        max-width: 650px;
-        float: left;
-        border: 1px solid #ddd;
-    }
-
-    #buttons {
-        width: 100px;
-        height: 100px;
-        background: #fff;
+        max-width: 1050px;
         float: left;
         border: 1px solid #ddd;
     }
@@ -101,7 +93,7 @@ text-decoration: none;
     }
 
     #spaces {
-        width: 100px;
+        width: 150px;
         height: 100px;
         background: #fff;
         float: left;
@@ -145,7 +137,7 @@ text-decoration: none;
         background: #fff;
         padding: 30px;
         width: 100%;
-        max-width: 270px;
+        max-width: 1000px;
         float: right;
         border: 1px solid #ddd;
         margin-bottom: 200px;
