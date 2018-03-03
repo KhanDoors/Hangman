@@ -76,8 +76,25 @@ function getword() {
  };
  function roundComplete(){
    console.log("In round completer");
-
+   document.getElementById("Words").innerHTML = rightGuessDashes.join(" ");
+   document.getElementById("guesses-left").innerHTML = guessLeft;
+   document.getElementById("wrong-guess").innerHTML = wrongGuess.join(" ");
+   if (lettersInTheWord.toString() === rightGuessDashes.toString()){
+       winCounter++;
+       alert("You Win!");
+       document.getElementById("wins").innerHTML = winCounter;
+ 
+       getWord();
+   }
+   else if(guessLeft === 0){
+       loseCounter++;
+       alert("You Lose!");
+       document.getElementById("loses").innerHTML = loseCounter;
+       getWord();
+       
+   }
+ 
  };
 
 
-var answer = [];
+
