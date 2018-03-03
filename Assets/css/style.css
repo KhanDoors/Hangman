@@ -92,14 +92,6 @@ text-decoration: none;
         border: 1px solid #ddd;
     }
 
-    #spaces {
-        width: 150px;
-        height: 100px;
-        background: #fff;
-        float: left;
-        border: 1px solid #ddd;
-    }
-
     #wins {
         width: 100px;
         height: 100px;
