@@ -36,7 +36,7 @@ document.onkeyup = function(event) {
 
 function getword() {
   guessLeft = 9;
-  var chosenWord = words[Math.floor(Math.random() * words.length)];
+  chosenWord = words[Math.floor(Math.random() * words.length)];
   console.log(chosenWord);
   lettersInTheWord = chosenWord.split("");
   console.log(lettersInTheWord);
