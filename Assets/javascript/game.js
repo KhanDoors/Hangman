@@ -1,12 +1,10 @@
-window.onload = function () {
 
-   
+
+
 //define words
 var words = ["cowboys", "giants", "eagles", "redskins"];
 
-var word=words[Math.floor(Math.random()* words.length)];
-
-var answer=[];
+var answer = [];
 
 var guessLeft = 9;
 
@@ -26,71 +24,60 @@ var wrongGuess = [];
 
 var rightGuessDashes = [];
 
+getword();
 
-//randomly select the word
-function getWord() { 
-    chosenWord = words[Math.floor(Math.random() * words.length)];
-    document.getElementById("Words").innerHTML = chosenWord;
-  };
-//execute above function
-getWord();
-//create dashes for amount of letters
-var answer=[];
+document.onkeyup = function(event) {
+  // Converts all key clicks to lowercase letters.
+  letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+  console.log(letterGuessed);
+  startGame(letterGuessed);
+  roundComplete();
+};
 
-for (var i=0; i<word.length;i++) 
-{
-    answer[i]="_";
-      }
-  document.getElementById("spaces").innerHTML = answer;
-  
-//get user input
-var guess = prompt("Guess a letter, or click Cancel to stop playing.");
-
-if (guess === null) 
-
- if (guess.length !== 1) {
-
-   alert("Please enter a single letter.");
-
- } 
-  
-else if (guess.length !== 1)
-
-for (var j = 0; j < word.length; j++) {
-
- if (word[j] === guess) {
-
-     answerArray[j] = guess;
-
-   remainingLetters--;
-
-   document.getElementById("spaces").innerHTML = answer;
+function getword() {
+  guessLeft = 9;
+  var chosenWord = words[Math.floor(Math.random() * words.length)];
+  console.log(chosenWord);
+  lettersInTheWord = chosenWord.split("");
+  console.log(lettersInTheWord);
+  dashes = lettersInTheWord.length;
+  rightGuessDashes = [];
+  wrongGuess = [];
+  for (var i = 0; i < dashes; i++) {
+    rightGuessDashes.push("_");
+  }
+  console.log(rightGuessDashes);
+  document.getElementById("guesses-left").innerHTML = guessLeft;
+  document.getElementById("Words").innerHTML = rightGuessDashes;
+  document.getElementById("wrong-guess").innerHTML = wrongGuess;
+ };
+ function startGame(letter){
+   var goodLetter = false;
+   for(var i =0; i < dashes; i++){
+     if(chosenWord[i] === letter){
+       goodLetter = true;
+     }
    }
+   if(goodLetter){
+     for(var j = 0; j < dashes; j++){
+       if(chosenWord[j] === letter){
+         rightGuessDashes[j] = letter;
 
- }
-  
- // remaining guess
- var remainingGuess=word.length;
-while(remainingGuess>0){
-  alert(answer.join(" "));
-  var guess=prompt("Guess a letter or cancel to quit game");
-  if (guess==null){
-    break;
-  }
-  else if (guess.length!=1){
-    alert("please enter a single letter");
-  }
-  else {
-    for (var j=0;j<word.length;j++){
-      if(word[j]==guess){
-        answer[j]=guess;
-        remainingGuess--;
-        
-      }
-    }
-  }
-}
-alert(answer.join(" "));
-alert("You Won! The Word was "+ word);
+       }
+     }
+     console.log(rightGuessDashes);
+   } else
+   {
+     wrongGuess.push(letter);
+     guessLeft--;
+   }
+   console.log("The user pressed " + letter);
 
-}
+ };
+ function roundComplete(){
+   console.log("In round completer");
+
+ };
+
+
+var answer = [];
